@@ -1,12 +1,12 @@
 const Movie = require('../models/movie')
 
-const handleError = (res, error) => {
+const handleError = (res, error) => { 
   res.status(500).json({error})
 }
 const getMovies = (req, res) => {
   Movie
   .find()
-  .sort({title: -1})
+  .sort({title: 1})
   .then((movies) => {
     res
       .status(200)

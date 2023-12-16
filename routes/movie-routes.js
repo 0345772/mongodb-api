@@ -1,5 +1,4 @@
 const express = require('express')
-const Movie = require('../models/movie')
 const {
   getMovies,
   getMovie, 
@@ -10,15 +9,15 @@ const {
 
 const router = express.Router()
 
-router.get('/movies', getMovies(req, res))
+router.get('/movies', getMovies)
 
-router.get('/movies/:id', getMovie(req, res))
+router.get('/movies/:id', getMovie)
 
-router.delete('/movies/:id', deleteMovie(req, res))
+router.delete('/movies/:id', deleteMovie)
 
-router.post('/movies', addMovie(req, res))
+router.post('/movies', addMovie)
 
-router.patch("/movies/:id", updateMovie(req, res))
+router.patch("/movies/:id", updateMovie)
 
 module.exports = router;
 
